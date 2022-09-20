@@ -103,18 +103,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun download() {
-
-        custom_button.setState(ButtonState.Loading)
-        val request =
-            DownloadManager.Request(Uri.parse(URL))
-                .setTitle(getString(R.string.app_name))
-                .setDescription(getString(R.string.app_description))
-                .setRequiresCharging(false)
-                .setAllowedOverMetered(true)
-                .setAllowedOverRoaming(true)
-                .setDestinationInExternalFilesDir(this, Environment.DIRECTORY_DOWNLOADS, FILE_NAME)
-        downloadManager = getSystemService(DOWNLOAD_SERVICE) as DownloadManager
-        downloadID = downloadManager.enqueue(request)
+        if(URL != "") {
+            custom_button.setState(ButtonState.Loading)
+            val request =
+                DownloadManager.Request(Uri.parse(URL))
+                    .setTitle(getString(R.string.app_name))
+                    .setDescription(getString(R.string.app_description))
+                    .setRequiresCharging(false)
+                    .setAllowedOverMetered(true)
+                    .setAllowedOverRoaming(true)
+                    .setDestinationInExternalFilesDir(
+                        this,
+                        Environment.DIRECTORY_DOWNLOADS,
+                        FILE_NAME
+                    )
+            downloadManager = getSystemService(DOWNLOAD_SERVICE) as DownloadManager
+            downloadID = downloadManager.enqueue(request)
+        }else{
+            Toast.makeText(this, "Please select a file to download", Toast.LENGTH_SHORT).show()
+            custom_button.setState(ButtonState.Completed)
+        }
 
     }
 
