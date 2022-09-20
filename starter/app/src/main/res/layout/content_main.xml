@@ -9,6 +9,35 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
+    <RadioGroup
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/custom_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <RadioButton
+            android:id="@+id/glide_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/glide_image_loading_library_by_bumptech"
+            android:textSize="21sp"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/project3_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/loadapp_current_repository_by_udacity"
+            android:textSize="21sp" />
+        <RadioButton
+            android:id="@+id/retrofit_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/retrofit_type_saafe_http_client_for_android_and_java_by_square_inc"
+            android:textSize="21sp"/>
+    </RadioGroup>
     <com.udacity.LoadingButton
         android:id="@+id/custom_button"
         android:layout_width="0dp"
@@ -16,6 +45,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_height="60dp"
         android:layout_margin="20dp"
+        app:normalColor="@color/colorPrimary"
+        app:loadingColor="@color/colorPrimaryDark"
+        app:textColor="@color/white"
+        app:circleColor="@color/colorAccent"
+        app:textSize="50"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
