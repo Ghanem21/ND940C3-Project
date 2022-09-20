@@ -5,7 +5,7 @@
     <Transition
         app:constraintSetStart="@+id/start"
         app:constraintSetEnd="@+id/end"
-        app:duration="1500"
+        app:duration="1800"
         app:autoTransition="animateToEnd">
 
     </Transition>
@@ -15,8 +15,7 @@
             android:id="@+id/file_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
             android:alpha="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -24,8 +23,7 @@
             android:id="@+id/status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
             android:alpha="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -33,19 +31,17 @@
             android:id="@+id/file_name_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
             android:alpha="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Constraint
             android:id="@+id/status_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
             android:alpha="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </ConstraintSet>
 
